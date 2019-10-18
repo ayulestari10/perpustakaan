@@ -18,6 +18,8 @@
 
     $data1=mysqli_fetch_assoc($query1);
     $data2=mysqli_fetch_assoc($query2);
+
+    $simpan1=mysqli_fetch_array($query1);
     
 ?>
 <html>
