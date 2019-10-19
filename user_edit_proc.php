@@ -9,8 +9,8 @@
     $password   = $_POST['password'];
 
     $sql    = "update user 
-    set id_user = $id_user, username = $username, name = $name, 
-    email = $email, password = $password
+    set id_user = $id_user, username = '$username', name = '$name', 
+    email = '$email', password = '$password'
     where id_user = $id_user";
     $simpan = $db->query($sql);
 
