@@ -10,7 +10,7 @@
     $query=$db->query($sql);
     $data=mysqli_fetch_assoc($query);
 
-    $sql1="select * from user inner join pinjam_buku on user.id_user = pinjam_buku.id_user";
+    $sql1="select * from user";
     $sql2="select * from buku";
 
     $query1=$db->query($sql1);
@@ -24,7 +24,7 @@
     <body>
         <h2>Pinjam Buku</h2><br><br>
         <form method="POST" action="pinjam_buku_edit_proc.php">
-                <input type="hidden" name="id_pinjam" value="<?=$data['id_pinjam']?>">
+                <input type="hidden" name="id_pinjam" value="<?=$data   ['id_pinjam']?>">
                 Nama<br>
                 <select name="id_user">
                     <?php while($simpan1= mysqli_fetch_assoc($query1)): ?>
