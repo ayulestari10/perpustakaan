@@ -27,15 +27,15 @@
                 <td>Action</td>
             </tr>
             <?php
-            $sql="SELECT pinjam_buku.*, buku.*, user.* 
-            FROM pinjam_buku 
-            INNER JOIN buku ON pinjam_buku.id_buku=buku.id_buku 
-            INNER JOIN user ON pinjam_buku.id_user=user.id_user
-            order by id_pinjam";
-            $query= $db->query($sql);
-            $nomor=0;
-            while($data= mysqli_fetch_array($query)){
-                $nomor++;
+                $sql    = "SELECT pinjam_buku.*, buku.*, user.* 
+                            FROM pinjam_buku 
+                            INNER JOIN buku ON pinjam_buku.id_buku=buku.id_buku 
+                            INNER JOIN user ON pinjam_buku.id_user=user.id_user
+                            order by id_pinjam";
+                $query  = $db->query($sql);
+                $nomor  = 0;
+                while($data = mysqli_fetch_array($query)){
+                    $nomor++;
             ?>
             <tr>
                 <td><?= $nomor;?></td>
@@ -65,10 +65,10 @@
                 <td>Action</td>
             </tr>
             <?php
-            $sql="select * from buku order by id_buku desc";
-            $query= $db->query($sql);
+            $sql    = "select * from buku order by id_buku desc";
+            $query  = $db->query($sql);
             
-            while($data= mysqli_fetch_array($query)){
+            while($data = mysqli_fetch_array($query)){
             ?>
             <tr>
                 <td><?= $data['id_buku'];?></td>
