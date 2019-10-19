@@ -1,5 +1,6 @@
 <?php
     include 'config.php';
+    session_start();
 
     $id_pinjam          = $_POST['id_pinjam'];
     $id_user            = $_POST['id_user'];
@@ -14,6 +15,9 @@
 
     $simpan = $db->query($sql);
 
-    echo "data telah di update \n";
-    echo "<a href='index.php'>Klik disini</a> untuk kembali";
+    $_SESSION['msg_success'] = "<br><b>Data Telah Di Update</b><br>";
+    header("location: index.php");
+
+    // echo "data telah di update \n";
+    //echo "<a href='index.php'>Klik disini</a> untuk kembali";
 ?>

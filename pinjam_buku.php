@@ -1,5 +1,7 @@
 <?php
+    session_start();
     include 'config.php';
+    include 'msg_session_destroy.php';
     
     $sql1   = "select * from user";
     $sql2   = "select * from buku";

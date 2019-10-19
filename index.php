@@ -1,10 +1,11 @@
 <?php
     include 'config.php';
+
     session_start();
     if(!isset($_SESSION['username'])){
         header("location: login.php");
     }else{
-        $username=$_SESSION['username'];
+        $username = $_SESSION['username'];
     }
 ?>
 <html>
@@ -12,10 +13,20 @@
         <title>Sistem Informasi Perpustakaan</title>
     </head>
     <body>
-    SELAMAT DATANG <?php echo $username ?>, apakah anda ingin logout ? <a href="logout_proc.php">Klik disini</a>
-    <br><br>
-    <h2>Table Pinjam Buku</h2>
-    <a href="pinjam_buku.php">Pinjam Buku</a>
+    
+        SELAMAT DATANG <?php echo $username ?>, apakah anda ingin logout ? <a href="logout_proc.php">Klik disini</a>
+        <br><br>
+
+        <!-- Session Message -->        
+        <?php 
+            if(isset($_SESSION['msg_success'])){
+                echo $_SESSION['msg_success'];
+            } 
+        ?>
+        
+        <h2>Table Pinjam Buku</h2>
+        <a href="pinjam_buku.php">Pinjam Buku</a>
+    
         <table border= '1'>
             <tr>
                 <td>No</td>

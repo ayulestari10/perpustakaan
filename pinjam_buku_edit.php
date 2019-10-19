@@ -1,5 +1,9 @@
 <?php
+
+    session_start();
+    
     include 'config.php';
+
     if(!isset($_GET['id_pinjam'])){
         header("location: index.php");
     }
@@ -22,6 +26,7 @@
     </head>
     <body>
         <h2>Pinjam Buku</h2><br><br>
+
         <form method="POST" action="pinjam_buku_edit_proc.php">
             
             <input type="hidden" name="id_pinjam" value="<?=$data['id_pinjam']?>">
