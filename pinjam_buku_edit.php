@@ -23,7 +23,8 @@
     </head>
     <body>
         <h2>Pinjam Buku</h2><br><br>
-        <form method="POST" action="pinjam_buku_proc.php">
+        <form method="POST" action="pinjam_buku_edit_proc.php">
+                <input type="hidden" name="id_pinjam" value="<?=$data['id_pinjam']?>">
                 Nama<br>
                 <select name="id_user">
                     <?php while($simpan1= mysqli_fetch_assoc($query1)): ?>
